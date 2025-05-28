@@ -3,9 +3,9 @@
 A beautifully designed recipe blog built with Django.  </br>
 This project allows users to explore, read, and share food recipes in an elegant and responsive web interface.
 
-> 💡 Inspired by community Figma UI designs:
-> - [Recipedia – Landing Page (Figma)](https://www.figma.com/design/otszZw6WPAQeTCYRZFW2j1/Recipedia---Landing-Page--Community-?node-id=1-2&t=VSn7wUQ9caVTHqlQ-0)  
-> - [Food Recipe UI Kit (Figma)](https://www.figma.com/design/SqmtpsY9bFeFeUqgWSRZK4/food-Recipe-Website-Ui-Kit--Community-?node-id=1-57&t=iSu19JFWkyh4c9LS-0)
+💡 Inspired by community Figma UI designs:
+- [Recipedia – Landing Page (Figma)](https://www.figma.com/design/otszZw6WPAQeTCYRZFW2j1/Recipedia---Landing-Page--Community-?node-id=1-2&t=VSn7wUQ9caVTHqlQ-0)  
+- [Food Recipe UI Kit (Figma)](https://www.figma.com/design/SqmtpsY9bFeFeUqgWSRZK4/food-Recipe-Website-Ui-Kit--Community-?node-id=1-57&t=iSu19JFWkyh4c9LS-0)
 
 ---
 
@@ -36,16 +36,16 @@ This project allows users to explore, read, and share food recipes in an elegant
   cd django-ricipe-blog
 
 ### 2. Create and activate a virtual environment:
-# Windows (CMD)
-  python -m venv venv
-  venv\Scripts\activate
+  Windows (CMD): </br>
+  python -m venv venv </br>
+  venv\Scripts\activate </br>
 
-# Windows (PowerShell)
-  .\venv\Scripts\Activate.ps1
+  Windows (PowerShell): </br>
+  .\venv\Scripts\Activate.ps1 </br>
 
-# macOS/Linux
-  python3 -m venv venv
-  source venv/bin/activate
+  macOS/Linux: </br>
+  python3 -m venv venv </br>
+  source venv/bin/activate </br>
 
 ### 3. Install dependencies:
  pip install -r requirements.txt
