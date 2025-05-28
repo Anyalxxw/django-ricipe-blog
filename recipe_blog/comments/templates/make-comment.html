@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/create-comment-blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="form">
+        <h1>Rate these recipes and share your opinion</h1>
+        <form action="{% url 'comments:make-comment' %}" class="site-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Post" class="btn">
+        </form>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

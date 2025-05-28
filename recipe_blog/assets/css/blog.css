@@ -1,0 +1,45 @@
+.blog{
+    margin: 0 5%;
+}
+.blog h1{
+    font-size: 30px;
+    text-align: center;
+}
+.articles{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.articles .article{
+    border-radius: 1rem;
+    border: 1px solid var(--color-grey);
+    box-shadow: var(--box-shadow);
+}
+.articles .article img{
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+}
+.articles .article .info{
+    padding: 1.5rem;
+    cursor: pointer;
+}
+.articles .article .info h2{
+    font-size: 30px;
+}
+.articles .article .info p{
+    font-size: 20px;
+    color: grey;
+    margin-top: 0.5rem;
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+    .articles{
+        grid-template-columns: 1fr;
+    }
+}

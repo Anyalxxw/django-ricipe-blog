@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="blog">
+        <!-- <h1>Blog</h1> -->
+        <div class="articles">
+            {% for post in posts %}
+            <div class="article">
+                <img src="{{ post.image.url }}">
+                <div class="info">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'blog:create-blog' %}" class="btn">Create Blog</a>
+    </div>
+
+{% endblock %}
+

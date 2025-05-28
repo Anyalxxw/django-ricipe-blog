@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home-page' %}">Recipedia</a>
+        <ul>
+            <li><a href="{% url 'home-page' %}">Home</a></li>
+            <li><a href="{% url 'recipes:recipes-list' %}">Recipes</a></li>
+            <li><a href="{% url 'blog:blog-list' %}">Blog</a></li>
+        </ul>
+        <div class="account">
+            {% if user.is_authenticated %}
+            <form action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button class="account-btn">Log out</button>
+            </form>
+            {% else %}
+            <a href="{% url 'accounts:login' %}" class="account-btn">Log in</a>
+            <a href="{% url 'accounts:signup' %}" class="account-btn">Sign up</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+    
+    {% block content %}
+
+    <main>
+        <div class="left-side">
+            <h1>Cooking Made Fun and Easy: Unleash Your Inner Chef</h1>
+            <p>Discover more than <span>10,000 recipes</span> in your hand with the <br> best recipe. Help you to find the easiest way to cook.</p>
+            <a href="{% url 'recipes:recipes-list' %}" class="btn">Explore Recipes</a>
+        </div>
+        <div class="right-side">
+            <img src="{% static 'img/main.png' %}">
+        </div>
+    </main>
+
+    <section class="create">
+        <div class="info">
+            <div class="text">
+                <h1>Discover, Create, Share</h1>
+                <p>Check our most popular recipes of this week</p>
+            </div>
+            <a href="{% url 'recipes:create-recipe' %}" class="btn">Create recipe</a>
+        </div>
+        <div class="recipes">
+            {% for recipe in recipes %}
+            <div class="recipe">
+                <img src="{{ recipe.image.url }}">
+                <div class="desc">
+                  <p>{{ recipe.prep_time }} Mins</p>
+                  <p>{{ recipe.serving }} Serving</p>
+                  <p>Easy</p>
+                </div>
+                <h2>{{ recipe.name }}</h2>
+                <a href="{% url 'recipes:recipe' recipe.name %}" class="view-btn">View Recipe</a>
+            </div>
+            {% endfor %}
+          </div>
+    </section>
+
+    <section class="blog">
+        <div class="link-blog">
+            <h2>Blog</h2>
+            <p>Our recipes are the heart and soul of our culinary <br> community, and they reflect our commitment to <br> providing you with memorable and delightful dining <br> experiences.</p>
+            <a href="{% url 'blog:blog-list' %}" class="btn">View More</a>
+        </div>
+    </section>
+
+    <section class="review">
+        <h1>From Our Community</h1>
+        <div class="comments">
+            {% for comment in comments %}
+            <div class="comment">
+                <h2>{{ comment.name }}</h2>
+                <span>{{ comment.author.username }}</span>
+                <img src="{% static 'img/stars.png' %}" class="stars">
+                <p>{{ comment.text }}</p>
+                <img src="{{ comment.image.url }}" class="food">
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'comments:make-comment' %}" class="btn">Add comment</a>
+    </section>
+
+    {% endblock %}
+
+    
+    <footer>
+        <a href="{% url 'home-page' %}">Recipedia</a>
+        <div class="categories">
+            <div class="left-side">
+                <ul>
+                    <li>Menu</li>
+                    <li>Home</li>
+                    <li>Recipe</li>
+                    <li>Community</li>
+                    <li>About Us</li>
+                </ul>
+                <ul>
+                    <li>Categories</li>
+                    <li>Breakfast</li>
+                    <li>Lunch</li>
+                    <li>Dinner</li>
+                    <li>Dessert</li>
+                    <li>Drink</li>
+                </ul>
+                <ul>
+                    <li>Social</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>Youtube</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

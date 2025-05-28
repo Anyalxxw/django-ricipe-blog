@@ -1,0 +1,46 @@
+.form{
+    text-align: left;
+    margin: 0 5%;
+}
+.form h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+form label{
+    display: flex;
+    padding-bottom: 0.5rem;
+    font-size: 20px;
+}
+.form form textarea[name='name'],
+.form form textarea[name='title'],
+.form form input[type='number']
+{
+    border-radius: 1rem;
+    background: var(--color-grey);
+    border: 0;
+    width: 30%;
+    height: 4rem;
+    resize: none;
+    padding: 1rem;
+}
+.form form textarea[name='text'],
+.form form textarea[name='description'],
+.form form textarea[name='ingredients'],
+.form form textarea[name='instruction']
+{
+    border-radius: 1rem;
+    background: var(--color-grey);
+    border: 0;
+    width: 70%;
+    height: 40%;
+    resize: none;
+    padding: 1rem;
+}
+.form form textarea:focus{
+    outline: none;
+}
+.btn{
+    font-size: 20px;
+    border: 0;
+    padding: 1rem 2rem; 
+}

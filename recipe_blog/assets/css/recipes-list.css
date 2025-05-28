@@ -1,0 +1,74 @@
+h1{
+    margin: 3rem 2rem 1rem 2rem;
+    font-size: 40px;
+}
+.create-recipe{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 6%;
+}
+.create-recipe img{
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+}
+.create-recipe .right-side{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.create-recipe .right-side h1{
+    font-size: 70px;
+    margin: 0;
+}
+.create-recipe .right-side span{
+    color: var(--color-orange);
+}
+.trending-recip{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+.trending-recip .recip{
+    border-radius: 2rem;
+    background: white;
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+.trending-recip .recip img{
+    width: 100%;
+    border-radius: 2rem;
+}
+.trending-recip .recip img.stars{
+    width: 30%;
+}
+.trending-recip .recip .description{
+    padding-left: 0.5rem;
+}
+.trending-recip .recip h2{
+    padding-top: 0.3rem;
+}
+.trending-recip .recip p{
+    font-size: 20px;
+}
+.trending-recip .recip a{
+    display: block;
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 950px) {
+    .create-recipe{
+        grid-template-columns: 1fr;
+    }
+    .create-recipe img{
+        display: none;
+    }
+    .trending-recip{
+        grid-template-columns: 1fr;
+    }
+}

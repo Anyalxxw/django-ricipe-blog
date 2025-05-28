@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/recipes-list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="create-recipe">
+        <div class="right-side">
+            <h1>Share Your <br> <span>Recipes</span></h1>
+            <p>50+ Quick Food Recipes That Easy To Do! <br> Discover more than 10,000 recipes in your hand with the best recipe. <br> Help you to find the easiest way to cook.</p>
+            <a href="{% url 'recipes:create-recipe' %}" class="btn">Create New Recipe</a>
+        </div>
+        <img src="{% static 'img/image16.png' %}">
+    </div>
+    <h1>Trending Recipe</h1>
+    <div class="trending-recip">
+        {% for recipe in recipes %}
+            <div class="recip">
+                <img src="{{ recipe.image.url }}">
+                <div class="description">
+                    <img src="{% static 'img/stars.png' %}" class="stars">
+                    <h2>{{ recipe.name }}</h2>
+                    <a href="{% url 'recipes:recipe' recipe.name %}" class="btn">View More</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <h1>Explore Recipes</h1>
+    <div class="trending-recip">
+        {% for recipe in recipes %}
+        <div class="recip">
+            <img src="{{ recipe.image.url }}">
+            <div class="description">
+                <img src="{% static 'img/stars.png' %}" class="stars">
+                <h2>{{ recipe.name }}</h2>
+                <a href="{% url 'recipes:recipe' recipe.name %}" class="btn">View More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

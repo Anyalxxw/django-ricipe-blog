@@ -1,0 +1,97 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/recipe.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <div class="recipe">
+            <h1>{{ recipe.name }}</h1>
+            <div class="info">
+                <p>Date: {{ recipe.created_at }}</p>
+            </div>
+            <img src="{{ recipe.image.url }}">
+            <div class="decs">
+                <ul>
+                    <li>
+                        <h3>Prep time:</h3>
+                        <p>{{ recipe.prep_time }}</p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h3>Cook time:</h3>
+                        <p>{{ recipe.cook_time }}</p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h3>Serving:</h3>
+                        <p>{{ recipe.serving }}</p>
+                    </li>
+                </ul>
+            </div>
+            <p>{{ recipe.description }}</p>
+            <ul>
+                <h1>Ingredients:</h1>
+                {% for ing in ingredients %}
+                <li class="list">
+                    <div class="box ">⠀ </div>
+                    <p>{{ ing }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul>
+                <h1>Instructions: </h1>
+                {% for inst in instructions %}
+                <li class="list">
+                    <div class="box">⠀ </div>
+                    <p>{{ inst }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="nutrition">
+            <h2>Nutrition Facts</h2>
+            <ul>
+                <li>
+                    <p>Calories</p>
+                    <p>494</p>
+                </li>
+                <li>
+                    <p>Carbs</p>
+                    <p>80g</p>
+                </li>
+                <li>
+                    <p>Fat</p>
+                    <p>18g</p>
+                </li>
+                <li>
+                    <p>Protein</p>
+                    <p>24g</p>
+                </li>
+                <li>
+                    <p>Fiber</p>
+                    <p>23g</p>
+                </li>
+                <li>
+                    <p>Net carbs</p>
+                    <p>56g</p>
+                </li>
+                <li>
+                    <p>Sodium</p>
+                    <p>444mg</p>
+                </li>
+                <li>
+                    <p>Cholesterol</p>
+                    <p>0mg</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="{% static 'javascript/recipe.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/create-comment-blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="form">
+        <form action="{% url 'recipes:create-recipe' %}" method="post" enctype="multipart/form-data">
+            <h1>Create recipe</h1>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Save" class="btn">
+        </form>
+    </div>
+    
+{% endblock %}
+
+
+
+
