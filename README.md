@@ -60,10 +60,5 @@ This project allows users to explore, read, and share food recipes in an elegant
 
 ---
 
-📸 Screenshots </br>
-Coming soon... (or feel free to add your own UI screenshots here!)
-
----
-
 ✍️ License </br>
 This project is licensed under the MIT License.
