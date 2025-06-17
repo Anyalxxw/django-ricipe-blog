@@ -30,35 +30,31 @@ This project allows users to explore, read, and share food recipes in an elegant
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository:
-  `bash
-  git clone https://github.com/Anyalxxw/django-ricipe-blog.git
-  cd django-ricipe-blog
-
-### 2. Create and activate a virtual environment:
+**1. Clone the repository:** </br>
+  git clone https://github.com/Anyalxxw/django-ricipe-blog.git </br>
+  cd django-ricipe-blog</br>
+**2. Create and activate a virtual environment:** </br>
   Windows (CMD): </br>
   python -m venv venv </br>
   venv\Scripts\activate </br>
-
-  Windows (PowerShell): </br>
+  Windows (PowerShell): </br
   .\venv\Scripts\Activate.ps1 </br>
-
   macOS/Linux: </br>
   python3 -m venv venv </br>
   source venv/bin/activate </br>
-
-### 3. Install dependencies:
- pip install -r requirements.txt
-
-### 4. Run migrations:
-  python manage.py migrate
-
-### 5. Start the development server:
+**3. Install dependencies:** </br>
+ pip install -r requirements.txt </br>
+**4. Run migrations:** </br>
+  python manage.py migrate </br>
+**5. Start the development server:**
   python manage.py runserver
-
-### 6. Open in browser:
+**6. Open in browser**
 
 ---
 
-✍️ License </br>
-This project is licensed under the MIT License.
+## License
+
+  This project is licensed under the MIT License.  
+  You are free to use, modify, and distribute this software with proper attribution.  
+  © 2025 Anna Alekseeva
+
